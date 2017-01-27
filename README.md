@@ -1,15 +1,15 @@
-[![Dependency Status](https://david-dm.org/plantain-00/rpc-by-ws.svg)](https://david-dm.org/plantain-00/rpc-by-ws)
-[![devDependency Status](https://david-dm.org/plantain-00/rpc-by-ws/dev-status.svg)](https://david-dm.org/plantain-00/rpc-by-ws#info=devDependencies)
-[![Build Status](https://travis-ci.org/plantain-00/rpc-by-ws.svg?branch=master)](https://travis-ci.org/plantain-00/rpc-by-ws)
-[![npm version](https://badge.fury.io/js/rpc-by-ws.svg)](https://badge.fury.io/js/rpc-by-ws)
-[![Downloads](https://img.shields.io/npm/dm/rpc-by-ws.svg)](https://www.npmjs.com/package/rpc-by-ws)
+[![Dependency Status](https://david-dm.org/plantain-00/rpc-on-ws.svg)](https://david-dm.org/plantain-00/rpc-on-ws)
+[![devDependency Status](https://david-dm.org/plantain-00/rpc-on-ws/dev-status.svg)](https://david-dm.org/plantain-00/rpc-on-ws#info=devDependencies)
+[![Build Status](https://travis-ci.org/plantain-00/rpc-on-ws.svg?branch=master)](https://travis-ci.org/plantain-00/rpc-on-ws)
+[![npm version](https://badge.fury.io/js/rpc-on-ws.svg)](https://badge.fury.io/js/rpc-on-ws)
+[![Downloads](https://img.shields.io/npm/dm/rpc-on-ws.svg)](https://www.npmjs.com/package/rpc-on-ws)
 
-# rpc-by-ws
+# rpc-on-ws
 A lightweight RPC library on websocket connection.
 
 #### install
 
-`npm i rpc-by-ws`
+`npm i rpc-on-ws`
 
 #### usage
 
@@ -28,6 +28,7 @@ ws.on("message", (data, flags) => {
 2. initialize with the subject
 
 ```ts
+import { wsRpc } from "rpc-on-ws";
 const wsRpc = new WsRpc(subject, message => message.id);
 ```
 
