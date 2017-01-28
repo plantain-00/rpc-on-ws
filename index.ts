@@ -4,7 +4,7 @@ import "rxjs/add/operator/filter";
 export class WsRpc<T> {
     private lastRequestId = 0;
     constructor(private subject: Subject<T>, private getRequestId: (message: T) => number | undefined, private getError: (message: T) => string | undefined, private timeout = 10000) { }
-    send(send: (requestId: number) => void) {
+    send(send: (requestId: number) => void, timeout?: number) {
         return new Promise<T>((resolve, reject) => {
             const requestId = this.generateRequestId();
             let timeoutId: NodeJS.Timer;
@@ -25,7 +25,7 @@ export class WsRpc<T> {
             timeoutId = setTimeout(() => {
                 subscription.unsubscribe();
                 reject(new Error("timeout"));
-            }, this.timeout);
+            }, timeout || this.timeout);
             send(requestId);
         });
     }
