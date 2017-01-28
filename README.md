@@ -16,9 +16,10 @@ A lightweight RPC library on websocket connection.
 1. create subject and accept message:
 
 ```ts
-import { Subject } from "rxjs";
+import { Subject } from "rxjs/Subject";
+import "rxjs/add/operator/filter";
 
-const subject = new Subject<{ id: number, response: any }>();
+const subject = new Subject<{ id: number, response?: string, error?: string }>();
 
 ws.on("message", (data, flags) => {
     subject.next(JSON.parse(data));
@@ -29,7 +30,7 @@ ws.on("message", (data, flags) => {
 
 ```ts
 import { wsRpc } from "rpc-on-ws";
-const wsRpc = new WsRpc(subject, message => message.id);
+const wsRpc = new WsRpc(subject, message => message.id, message => message.error, message => message.response);
 ```
 
 3. call RPC

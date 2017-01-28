@@ -1,10 +1,10 @@
 import { Subject } from "rxjs";
 
-export class WsRpc<T> {
+export class WsRpc<T, R> {
     private lastRequestId = 0;
-    constructor(private subject: Subject<T>, private getRequestId: (message: T) => number, private timeout = 10000) { }
+    constructor(private subject: Subject<T>, private getRequestId: (message: T) => number, private getError: (message: T) => string | undefined, private getResponse: (message: T) => R | undefined, private timeout = 10000) { }
     send(send: (requestId: number) => void) {
-        return new Promise<T>((resolve, reject) => {
+        return new Promise<R>((resolve, reject) => {
             const requestId = this.generateRequestId();
             let timeoutId: number;
             const subscription = this.subject
@@ -14,7 +14,13 @@ export class WsRpc<T> {
                         clearTimeout(timeoutId);
                     }
                     subscription.unsubscribe();
-                    resolve(r);
+                    const error = this.getError(r);
+                    if (error) {
+                        reject(new Error(error));
+                    } else {
+                        const response = this.getResponse(r);
+                        resolve(response);
+                    }
                 });
             timeoutId = setTimeout(() => {
                 subscription.unsubscribe();
