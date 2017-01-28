@@ -1,13 +1,13 @@
 import { Subject } from "rxjs/Subject";
 import "rxjs/add/operator/filter";
 
-export class WsRpc<T, R> {
+export class WsRpc<T> {
     private lastRequestId = 0;
-    constructor(private subject: Subject<T>, private getRequestId: (message: T) => number, private getError: (message: T) => string | undefined, private getResponse: (message: T) => R | undefined, private timeout = 10000) { }
+    constructor(private subject: Subject<T>, private getRequestId: (message: T) => number | undefined, private getError: (message: T) => string | undefined, private timeout = 10000) { }
     send(send: (requestId: number) => void) {
-        return new Promise<R>((resolve, reject) => {
+        return new Promise<T>((resolve, reject) => {
             const requestId = this.generateRequestId();
-            let timeoutId: number;
+            let timeoutId: NodeJS.Timer;
             const subscription = this.subject
                 .filter(r => this.getRequestId(r) === requestId)
                 .subscribe(r => {
@@ -19,8 +19,7 @@ export class WsRpc<T, R> {
                     if (error) {
                         reject(new Error(error));
                     } else {
-                        const response = this.getResponse(r);
-                        resolve(response);
+                        resolve(r);
                     }
                 });
             timeoutId = setTimeout(() => {

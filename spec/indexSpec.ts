@@ -3,11 +3,11 @@ import { Subject } from "rxjs/Subject";
 
 it("should handle result", done => {
     const subject = new Subject<{ id: number, response?: string, error?: string }>();
-    const wsRpc = new WsRpc(subject, message => message.id, message => message.error, message => message.response);
+    const wsRpc = new WsRpc(subject, message => message.id, message => message.error);
     wsRpc.send(requestId => {
         expect(requestId).toEqual(1);
     }).then(response => {
-        expect(response).toEqual("aaa");
+        expect(response.response).toEqual("aaa");
         done();
     }, error => {
         throw new Error("should not be error.");
@@ -20,7 +20,7 @@ it("should handle result", done => {
 
 it("should handle error", done => {
     const subject = new Subject<{ id: number, response?: string, error?: string }>();
-    const wsRpc = new WsRpc(subject, message => message.id, message => message.error, message => message.response);
+    const wsRpc = new WsRpc(subject, message => message.id, message => message.error);
     wsRpc.send(requestId => {
         expect(requestId).toEqual(1);
     }).then(response => {
@@ -37,7 +37,7 @@ it("should handle error", done => {
 
 it("should handle timeout", done => {
     const subject = new Subject<{ id: number, response?: string, error?: string }>();
-    const wsRpc = new WsRpc(subject, message => message.id, message => message.error, message => message.response, 1000);
+    const wsRpc = new WsRpc(subject, message => message.id, message => message.error, 1000);
     wsRpc.send(requestId => {
         expect(requestId).toEqual(1);
     }).then(response => {
