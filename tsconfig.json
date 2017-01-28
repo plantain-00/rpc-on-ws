@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es6",
+        "target": "es5",
         "module": "commonjs",
         "noImplicitAny": true,
         "sourceMap": true,
@@ -11,6 +11,11 @@
         "skipLibCheck": true,
         "importHelpers": true,
         "declaration": true,
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "lib": [
+            "es5",
+            "es2015.promise",
+            "dom"
+        ]
     }
 }
