@@ -28,7 +28,7 @@ ws.on("message", (data, flags) => {
 2. initialize with the subject
 
 ```ts
-import { wsRpc } from "rpc-on-ws";
+import { WsRpc } from "rpc-on-ws";
 const wsRpc = new WsRpc(subject, message => message.id, message => message.error, message => message.response);
 ```
 
