@@ -1,6 +1,5 @@
 import { WsRpc } from "../index";
 import { Subject } from "rxjs/Subject";
-import "rxjs/add/operator/filter";
 
 it("should handle result", done => {
     const subject = new Subject<{ id: number, response?: string, error?: string }>();

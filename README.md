@@ -17,7 +17,6 @@ A lightweight RPC library on websocket connection.
 
 ```ts
 import { Subject } from "rxjs/Subject";
-import "rxjs/add/operator/filter";
 
 const subject = new Subject<{ id: number, response?: string, error?: string }>();
 

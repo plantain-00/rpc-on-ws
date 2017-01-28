@@ -1,4 +1,5 @@
-import { Subject } from "rxjs";
+import { Subject } from "rxjs/Subject";
+import "rxjs/add/operator/filter";
 
 export class WsRpc<T, R> {
     private lastRequestId = 0;
