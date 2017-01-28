@@ -30,7 +30,7 @@ export class WsRpc<T> {
         });
     }
     generateRequestId() {
-        this.lastRequestId = this.lastRequestId < 4000000000000 ? this.lastRequestId + 1 : 0;
+        this.lastRequestId = this.lastRequestId < 4294967295 ? this.lastRequestId + 1 : 1; // 4294967295 = 2^32 - 1
         return this.lastRequestId;
     }
 }
