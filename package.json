@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/plantain-00/rpc-on-ws#readme",
   "dependencies": {
-    "rxjs": "^5.0.3"
+    "rxjs": "5.1.0"
   },
   "devDependencies": {
     "@types/jasmine": "2.5.41",
