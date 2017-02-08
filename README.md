@@ -13,7 +13,7 @@ A lightweight RPC library on websocket connection.
 
 #### usage
 
-1. create subject and accept message:
+1st, create subject and accept message:
 
 ```ts
 import { Subject } from "rxjs/Subject";
@@ -25,14 +25,14 @@ ws.on("message", (data, flags) => {
 });
 ```
 
-2. initialize with the subject
+2nd, initialize with the subject
 
 ```ts
 import { WsRpc } from "rpc-on-ws";
 const wsRpc = new WsRpc(subject, message => message.id, message => message.error, message => message.response);
 ```
 
-3. call RPC
+3rd, call RPC
 
 ```ts
 wsRpc.send(requestId => {
@@ -44,7 +44,7 @@ wsRpc.send(requestId => {
 });
 ```
 
-4. optional, just generate request id
+optional, just generate request id
 
 ```ts
 const requestId = wsRpc.generateRequestId();
