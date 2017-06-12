@@ -7,7 +7,7 @@ export class WsRpc<T> {
     send(send: (requestId: number) => void, timeout?: number) {
         return new Promise<T>((resolve, reject) => {
             const requestId = this.generateRequestId();
-            let timeoutId: NodeJS.Timer;
+            let timeoutId: number;
             const subscription = this.subject
                 .filter(r => this.getRequestId(r) === requestId)
                 .subscribe(r => {
