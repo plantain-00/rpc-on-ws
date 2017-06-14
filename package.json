@@ -25,6 +25,6 @@
     "@types/jasmine": "2.5.47",
     "jasmine": "2.6.0",
     "tslint": "5.4.0",
-    "typescript": "2.3.4"
+    "typescript": "2.4.0"
   }
 }
