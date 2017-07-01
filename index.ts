@@ -1,4 +1,5 @@
 import { Subject } from "rxjs/Subject";
+import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/filter";
 
 export class WsRpc<T> {
@@ -8,9 +9,9 @@ export class WsRpc<T> {
         return new Promise<T>((resolve, reject) => {
             const requestId = this.generateRequestId();
             let timeoutId: number;
-            const subscription = this.subject
-                .filter(r => this.getRequestId(r) === requestId)
-                .subscribe(r => {
+            const subscription = (this.subject as Observable<T>)
+                .filter((r: T) => this.getRequestId(r) === requestId)
+                .subscribe((r: T) => {
                     if (timeoutId) {
                         clearTimeout(timeoutId);
                     }
