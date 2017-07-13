@@ -1,12 +1,13 @@
 {
   "name": "rpc-on-ws",
-  "version": "3.1.4",
+  "version": "3.1.5",
   "description": "A lightweight RPC library on websocket connection.",
   "main": "index.js",
   "scripts": {
     "test": "jasmine",
     "build": "tsc",
-    "lint": "tslint \"*.ts\" \"spec/*.ts\""
+    "lint": "tslint \"*.ts\" \"spec/*.ts\"",
+    "release": "clean-release"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "@types/jasmine": "2.5.53",
+    "clean-release": "1.0.2",
     "jasmine": "2.6.0",
     "tslint": "5.4.3",
     "typescript": "2.4.1"
