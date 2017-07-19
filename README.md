@@ -28,7 +28,16 @@ ws.on("message", (data, flags) => {
 2nd, initialize with the subject
 
 ```ts
-import { WsRpc } from "rpc-on-ws";
+// nodejs:
+import WsRpc from "rpc-on-ws/nodejs";
+
+// browser(mode):
+import WsRpc from "rpc-on-ws/browser";
+
+// browser(script tag):
+// <script src="rpc-on-ws/rpc-on-ws.min.js"></script>
+
+
 const wsRpc = new WsRpc(subject, message => message.id, message => message.error, message => message.response);
 ```
 
@@ -48,4 +57,15 @@ optional, just generate request id
 
 ```ts
 const requestId = wsRpc.generateRequestId();
+```
+
+#### change logs
+
+```ts
+// v4
+import WsRpc from "rpc-on-ws/nodejs";
+import WsRpc from "rpc-on-ws/browser";
+
+// v3
+import { WsRpc } from "rpc-on-ws";
 ```

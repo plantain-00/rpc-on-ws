@@ -16,7 +16,6 @@
 
         "skipLibCheck": true,
         "importHelpers": true,
-        "jsx": "react",
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true
     }

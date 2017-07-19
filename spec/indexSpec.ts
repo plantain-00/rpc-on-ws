@@ -1,4 +1,4 @@
-import { WsRpc } from "../index";
+import WsRpc from "../dist/nodejs";
 import { Subject } from "rxjs/Subject";
 
 it("should handle result", done => {
