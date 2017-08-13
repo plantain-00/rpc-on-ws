@@ -2,6 +2,9 @@ import { Subject } from "rxjs/Subject";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/filter";
 
+/**
+ * @public
+ */
 export default class WsRpc<T> {
     private lastRequestId = 0;
     constructor(private subject: Subject<T>, private getRequestId: (message: T) => number | undefined, private getError: (message: T) => string | undefined, private timeout = 10000) { }
