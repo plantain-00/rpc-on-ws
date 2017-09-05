@@ -50,7 +50,7 @@ import WsRpc from "rpc-on-ws/browser";
 // <script src="rpc-on-ws/rpc-on-ws.min.js"></script>
 
 const subject = new Subject<{ id: number, response?: string, error?: string }>();
-const wsRpc = new WsRpc(subject, message => message.id, message => message.error, message => message.response);
+const wsRpc = new WsRpc(subject, message => message.id, message => message.error);
 const ws = new WebSocket("ws://localhost:8000");
 
 ws.onopen = () => {
