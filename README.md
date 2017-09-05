@@ -14,23 +14,34 @@ A lightweight RPC library on websocket connection.
 
 #### usage
 
-1st, create subject and accept message:
+server-side:
+
+```ts
+import * as WebSocket from "ws";
+
+const wss = new WebSocket.Server({ port: 8000 });
+
+wss.on("connection", ws => {
+    ws.on("message", data => {
+        const request: { id: number, response?: string, error?: string } = JSON.parse(data.toString());
+        setTimeout(() => { // mock heavy work
+            ws.send(JSON.stringify({
+                id: request.id,
+                response: "Hello world",
+            }));
+        }, 1000);
+    });
+});
+```
+
+client-side:
 
 ```ts
 import { Subject } from "rxjs/Subject";
 
-const subject = new Subject<{ id: number, response?: string, error?: string }>();
-
-ws.on("message", (data, flags) => {
-    subject.next(JSON.parse(data));
-});
-```
-
-2nd, initialize with the subject
-
-```ts
 // nodejs:
 import WsRpc from "rpc-on-ws/nodejs";
+import * as WebSocket from "ws";
 
 // browser(mode):
 import WsRpc from "rpc-on-ws/browser";
@@ -38,20 +49,23 @@ import WsRpc from "rpc-on-ws/browser";
 // browser(script tag):
 // <script src="rpc-on-ws/rpc-on-ws.min.js"></script>
 
-
+const subject = new Subject<{ id: number, response?: string, error?: string }>();
 const wsRpc = new WsRpc(subject, message => message.id, message => message.error, message => message.response);
-```
+const ws = new WebSocket("ws://localhost:8000");
 
-3rd, call RPC
+ws.onopen = () => {
+    ws.onmessage = data => {
+        subject.next(JSON.parse(data.data.toString()));
+    };
 
-```ts
-wsRpc.send(requestId => {
-    ws.send(JSON.stringify({ id: requestId, command: "abc" }));
-}).then(response => {
-    console.log(`accept: ${response.id} ${response.response}`);
-}, error => {
-    console.log(error);
-});
+    wsRpc.send(requestId => {
+        ws.send(JSON.stringify({ id: requestId, command: "abc" }));
+    }).then(response => {
+        console.log(`accept: ${response.id} ${response.response}`);
+    }, error => {
+        console.log(error);
+    });
+};
 ```
 
 optional, just generate request id
