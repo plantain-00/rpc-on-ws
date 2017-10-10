@@ -1,5 +1,5 @@
 const childProcess = require('child_process')
-const { sleep } = require('clean-scripts')
+const { Service } = require('clean-scripts')
 const util = require('util')
 
 const execAsync = util.promisify(childProcess.exec)
@@ -24,18 +24,8 @@ module.exports = {
     'tsc -p spec',
     'jasmine',
     'tsc -p demo',
-    async () => {
-      const server = childProcess.spawn('node', ['demo/server.js'])
-      server.stdout.pipe(process.stdout)
-      server.stderr.pipe(process.stderr)
-
-      const client = childProcess.spawn('node', ['demo/client.js'])
-      client.stdout.pipe(process.stdout)
-      client.stderr.pipe(process.stderr)
-
-      await sleep(2000)
-      server.kill('SIGINT')
-    },
+    new Service('node demo/server.js'),
+    'node demo/client.js',
     async () => {
       const { stdout } = await execAsync('git status -s')
       if (stdout) {

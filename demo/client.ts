@@ -22,3 +22,7 @@ ws.onopen = () => {
         console.log(error);
     });
 };
+
+setTimeout(() => {
+    process.exit();
+}, 2000);
