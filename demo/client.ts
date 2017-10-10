@@ -23,6 +23,14 @@ ws.onopen = () => {
     });
 };
 
+process.on("SIGINT", () => {
+    process.exit();
+});
+
+process.on("SIGTERM", () => {
+    process.exit();
+});
+
 setTimeout(() => {
     process.exit();
 }, 2000);
