@@ -2,10 +2,11 @@ import * as WebSocket from "ws";
 
 const wss = new WebSocket.Server({ port: 8000 });
 
+// tslint:disable:no-console
+
 wss.on("connection", ws => {
     ws.on("message", data => {
         const request: { id: number, response?: string, error?: string } = JSON.parse(data.toString());
-        // tslint:disable-next-line:no-console
         console.log(request);
         setTimeout(() => { // mock heavy work
             ws.send(JSON.stringify({
