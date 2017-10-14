@@ -43,8 +43,8 @@ import { Subject } from "rxjs/Subject";
 import WsRpc from "rpc-on-ws/nodejs";
 import * as WebSocket from "ws";
 
-// browser(mode):
-import WsRpc from "rpc-on-ws/browser";
+// browser(module):
+// import WsRpc from "rpc-on-ws/browser";
 
 // browser(script tag):
 // <script src="rpc-on-ws/rpc-on-ws.min.js"></script>
