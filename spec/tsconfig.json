@@ -16,6 +16,7 @@
         "skipLibCheck": true,
         "importHelpers": true,
         "experimentalDecorators": true,
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "newLine": "LF"
     }
 }
