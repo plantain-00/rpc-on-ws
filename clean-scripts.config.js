@@ -1,4 +1,4 @@
-const { Service, execAsync } = require('clean-scripts')
+const { Service, checkGitStatus } = require('clean-scripts')
 
 const tsFiles = `"src/**/*.ts" "spec/**/*.ts" "demo/**/*.ts"`
 const jsFiles = `"*.config.js"`
@@ -25,13 +25,7 @@ module.exports = {
     'tsc -p demo',
     new Service('node demo/server.js'),
     'node demo/client.js',
-    async () => {
-      const { stdout } = await execAsync('git status -s')
-      if (stdout) {
-        console.log(stdout)
-        throw new Error(`generated files doesn't match.`)
-      }
-    }
+    () => checkGitStatus()
   ],
   fix: {
     ts: `tslint --fix ${tsFiles}`,
