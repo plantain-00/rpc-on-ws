@@ -24,6 +24,8 @@
     "rxjs": "5"
   },
   "devDependencies": {
+    "@commitlint/cli": "5.0.1",
+    "@commitlint/config-angular": "5.0.1",
     "@types/jasmine": "2.8.2",
     "@types/node": "8.0.53",
     "@types/ws": "3.2.0",
