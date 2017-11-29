@@ -8,6 +8,7 @@ module.exports = {
     `rimraf dist/`,
     {
       back: `tsc -p src/tsconfig.nodejs.json`,
+      all: `tsc -p src/tsconfig.base.json`,
       front: [
         `tsc -p src/tsconfig.browser.json`,
         `rollup --config rollup.config.js`

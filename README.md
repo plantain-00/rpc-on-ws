@@ -40,11 +40,13 @@ client-side:
 import { Subject } from "rxjs/Subject";
 
 // nodejs:
-import WsRpc from "rpc-on-ws/nodejs";
+import WsRpc from "rpc-on-ws";
+// import WsRpc from "rpc-on-ws/nodejs"; // ES syntax
 import * as WebSocket from "ws";
 
 // browser(module):
-// import WsRpc from "rpc-on-ws/browser";
+// import WsRpc from "rpc-on-ws";
+// import WsRpc from "rpc-on-ws/browser"; // ES module
 
 // browser(script tag):
 // <script src="rpc-on-ws/rpc-on-ws.min.js"></script>
