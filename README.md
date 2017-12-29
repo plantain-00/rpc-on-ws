@@ -1,3 +1,5 @@
+# rpc-on-ws
+
 [![Dependency Status](https://david-dm.org/plantain-00/rpc-on-ws.svg)](https://david-dm.org/plantain-00/rpc-on-ws)
 [![devDependency Status](https://david-dm.org/plantain-00/rpc-on-ws/dev-status.svg)](https://david-dm.org/plantain-00/rpc-on-ws#info=devDependencies)
 [![Build Status: Linux](https://travis-ci.org/plantain-00/rpc-on-ws.svg?branch=master)](https://travis-ci.org/plantain-00/rpc-on-ws)
@@ -5,14 +7,13 @@
 [![npm version](https://badge.fury.io/js/rpc-on-ws.svg)](https://badge.fury.io/js/rpc-on-ws)
 [![Downloads](https://img.shields.io/npm/dm/rpc-on-ws.svg)](https://www.npmjs.com/package/rpc-on-ws)
 
-# rpc-on-ws
 A lightweight RPC library on websocket connection.
 
-#### install
+## install
 
 `npm i rpc-on-ws`
 
-#### usage
+## usage
 
 server-side:
 
@@ -76,7 +77,7 @@ optional, just generate request id
 const requestId = wsRpc.generateRequestId();
 ```
 
-#### change logs
+## change logs
 
 ```ts
 // v4
