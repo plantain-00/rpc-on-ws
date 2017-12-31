@@ -23,9 +23,9 @@
     "rxjs": "5"
   },
   "devDependencies": {
-    "@commitlint/cli": "5.2.6",
+    "@commitlint/cli": "5.2.8",
     "@commitlint/config-angular": "5.1.1",
-    "@types/jasmine": "2.8.2",
+    "@types/jasmine": "2.8.3",
     "@types/node": "8.5.2",
     "@types/ws": "3.2.1",
     "clean-scripts": "1.7.0",
@@ -33,7 +33,7 @@
     "markdownlint-cli": "0.5.0",
     "no-unused-export": "1.4.3",
     "rimraf": "2.6.2",
-    "rollup": "0.52.3",
+    "rollup": "0.53.2",
     "rollup-plugin-node-resolve": "3.0.0",
     "rollup-plugin-uglify": "2.0.1",
     "standard": "10.0.3",
