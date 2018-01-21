@@ -2,8 +2,6 @@ import { Subject } from 'rxjs/Subject'
 import * as WebSocket from 'ws'
 import WsRpc from '../dist/nodejs'
 
-// tslint:disable:no-console
-
 const subject = new Subject<{ id: number, response?: string, error?: string }>()
 const wsRpc = new WsRpc(subject, message => message.id, message => message.error)
 
