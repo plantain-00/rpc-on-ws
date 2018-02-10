@@ -1,24 +1,9 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-
-        "outDir": "../dist",
-
-        "declaration": true,
-        "lib": [
-            "es5",
-            "es2015.promise",
-            "dom"
-        ],
-
-        "strict": true,
-        "noUnusedLocals": true,
-        "noImplicitReturns": true,
-
-        "skipLibCheck": true,
-        "importHelpers": true,
-        "experimentalDecorators": true,
-        "allowSyntheticDefaultImports": true
-    }
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "../dist",
+    "declaration": true
+  }
 }
