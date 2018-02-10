@@ -1,5 +1,5 @@
 import { Subject } from 'rxjs/Subject'
-import * as WebSocket from 'ws'
+import WebSocket from 'ws'
 import WsRpc from '../dist/nodejs'
 
 const subject = new Subject<{ id: number, response?: string, error?: string }>()
