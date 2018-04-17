@@ -1,4 +1,4 @@
-const { Service, checkGitStatus } = require('clean-scripts')
+const { Service } = require('clean-scripts')
 
 const tsFiles = `"src/**/*.ts" "spec/**/*.ts" "demo/**/*.ts"`
 const jsFiles = `"*.config.js"`
@@ -27,8 +27,7 @@ module.exports = {
     'jasmine',
     'tsc -p demo',
     new Service('node demo/server.js'),
-    'node demo/client.js',
-    () => checkGitStatus()
+    'node demo/client.js'
   ],
   fix: {
     ts: `tslint --fix ${tsFiles}`,
