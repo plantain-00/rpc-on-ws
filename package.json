@@ -20,14 +20,14 @@
   },
   "homepage": "https://github.com/plantain-00/rpc-on-ws#readme",
   "dependencies": {
-    "rxjs": "5"
+    "rxjs": "6"
   },
   "devDependencies": {
     "@commitlint/cli": "6.2.0",
     "@commitlint/config-conventional": "6.1.3",
     "@types/jasmine": "2.8.7",
-    "@types/node": "10.0.4",
-    "@types/ws": "5.1.0",
+    "@types/node": "10.0.8",
+    "@types/ws": "5.1.1",
     "clean-scripts": "1.8.0",
     "jasmine": "3.1.0",
     "markdownlint-cli": "0.8.1",

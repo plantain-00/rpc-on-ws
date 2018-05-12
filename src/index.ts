@@ -1,6 +1,5 @@
-import { Subject } from 'rxjs/Subject'
-import { Observable } from 'rxjs/Observable'
-import 'rxjs/add/operator/filter'
+import { Subject, Observable } from 'rxjs'
+import { filter } from 'rxjs/operators'
 
 /**
  * @public
@@ -13,7 +12,7 @@ export default class WsRpc<T> {
       const requestId = this.generateRequestId()
       let timeoutId: NodeJS.Timer
       const subscription = (this.subject as Observable<T>)
-        .filter((r: T) => this.getRequestId(r) === requestId)
+        .pipe(filter((r: T) => this.getRequestId(r) === requestId))
         .subscribe((r: T) => {
           if (timeoutId) {
             clearTimeout(timeoutId)
