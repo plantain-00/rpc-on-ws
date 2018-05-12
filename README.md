@@ -79,6 +79,10 @@ const requestId = wsRpc.generateRequestId();
 
 ## change logs
 
+```txt
+// v5 rxjs@5 -> rxjs@6
+```
+
 ```ts
 // v4
 import WsRpc from "rpc-on-ws/nodejs";
