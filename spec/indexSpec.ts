@@ -1,5 +1,5 @@
 import WsRpc from '../dist/nodejs'
-import { Subject } from 'rxjs/Subject'
+import { Subject } from 'rxjs'
 
 it('should handle result', done => {
   const subject = new Subject<{ id: number, response?: string, error?: string }>()
