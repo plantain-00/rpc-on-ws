@@ -6,6 +6,7 @@
 [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/github/plantain-00/rpc-on-ws?branch=master&svg=true)](https://ci.appveyor.com/project/plantain-00/rpc-on-ws/branch/master)
 [![npm version](https://badge.fury.io/js/rpc-on-ws.svg)](https://badge.fury.io/js/rpc-on-ws)
 [![Downloads](https://img.shields.io/npm/dm/rpc-on-ws.svg)](https://www.npmjs.com/package/rpc-on-ws)
+[![gzip size](https://img.badgesize.io/https://unpkg.com/rpc-on-ws?compression=gzip)](https://unpkg.com/rpc-on-ws)
 
 A lightweight RPC library on websocket connection.
 
