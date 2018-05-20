@@ -39,7 +39,7 @@ wss.on("connection", ws => {
 client-side:
 
 ```ts
-import { Subject } from "rxjs/Subject";
+import { Subject } from "rxjs";
 
 // nodejs:
 import WsRpc from "rpc-on-ws";

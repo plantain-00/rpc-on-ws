@@ -1,8 +1,12 @@
 {
   "name": "rpc-on-ws",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "A lightweight RPC library on websocket connection.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "unpkg": "dist/rpc-on-ws.min.js",
+  "jsdelivr": "dist/rpc-on-ws.min.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "clean-scripts build",
     "lint": "clean-scripts lint",
