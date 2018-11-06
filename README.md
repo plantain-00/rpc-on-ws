@@ -7,6 +7,7 @@
 [![npm version](https://badge.fury.io/js/rpc-on-ws.svg)](https://badge.fury.io/js/rpc-on-ws)
 [![Downloads](https://img.shields.io/npm/dm/rpc-on-ws.svg)](https://www.npmjs.com/package/rpc-on-ws)
 [![gzip size](https://img.badgesize.io/https://unpkg.com/rpc-on-ws?compression=gzip)](https://unpkg.com/rpc-on-ws)
+[![type-coverage](https://img.shields.io/badge/dynamic/json.svg?label=type-coverage&prefix=%E2%89%A5&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fplantain-00%2Frpc-on-ws%2Fmaster%2Fpackage.json)](https://github.com/plantain-00/rpc-on-ws)
 
 A lightweight RPC library on websocket connection.
 
