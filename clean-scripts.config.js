@@ -6,13 +6,9 @@ const jsFiles = `"*.config.js"`
 module.exports = {
   build: [
     `rimraf dist/`,
-    {
-      back: `tsc -p src/tsconfig.nodejs.json`,
-      front: [
-        `tsc -p src/tsconfig.browser.json`,
-        `rollup --config rollup.config.js`
-      ]
-    }
+    `tsc -p src/tsconfig.nodejs.json`,
+    `tsc -p src/tsconfig.browser.json`,
+    `rollup --config rollup.config.js`
   ],
   lint: {
     ts: `tslint ${tsFiles}`,
