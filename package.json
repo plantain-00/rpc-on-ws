@@ -30,9 +30,9 @@
     "rxjs": "6"
   },
   "devDependencies": {
-    "@commitlint/cli": "7.3.1",
+    "@commitlint/cli": "7.3.2",
     "@commitlint/config-conventional": "7.3.1",
-    "@types/jasmine": "3.3.5",
+    "@types/jasmine": "3.3.7",
     "@types/node": "10.12.18",
     "@types/ws": "6.0.1",
     "clean-scripts": "1.9.2",
@@ -48,7 +48,7 @@
     "tslint-config-standard": "8.0.1",
     "tslint-sonarts": "1.8.0",
     "type-coverage": "1.6.2",
-    "typescript": "3.2.2",
+    "typescript": "3.2.4",
     "ws": "6.1.2"
   }
 }
