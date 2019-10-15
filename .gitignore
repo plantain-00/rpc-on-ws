@@ -50,3 +50,4 @@ service-worker.js
 *.data
 spec/*.xlsx
 *.d.ts
+temp

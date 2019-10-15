@@ -6,9 +6,16 @@ const jsFiles = `"*.config.js"`
 module.exports = {
   build: [
     `rimraf dist/`,
-    `tsc -p src/tsconfig.nodejs.json`,
-    `tsc -p src/tsconfig.browser.json`,
-    `rollup --config rollup.config.js`
+    {
+      back: [
+        'tsc -p src/tsconfig.nodejs.json',
+        'api-extractor run --local'
+      ],
+      front: [
+        `tsc -p src/tsconfig.browser.json`,
+        `rollup --config rollup.config.js`
+      ]
+    }
   ],
   lint: {
     ts: `eslint --ext .js,.ts,.tsx ${tsFiles} ${jsFiles}`,

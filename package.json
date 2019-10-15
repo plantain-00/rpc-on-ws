@@ -6,7 +6,6 @@
   "module": "browser/index.js",
   "unpkg": "rpc-on-ws.min.js",
   "jsdelivr": "rpc-on-ws.min.js",
-  "types": "nodejs/index.d.ts",
   "scripts": {
     "build": "clean-scripts build",
     "lint": "clean-scripts lint",
@@ -32,6 +31,7 @@
   "devDependencies": {
     "@commitlint/cli": "8.2.0",
     "@commitlint/config-conventional": "8.2.0",
+    "@microsoft/api-extractor": "^7.5.0",
     "@types/jasmine": "3.4.4",
     "@types/node": "12.7.12",
     "@types/ws": "6.0.3",
