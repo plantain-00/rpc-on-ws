@@ -1,14 +1,15 @@
-import WsRpc from '../dist/nodejs'
+/* eslint-disable plantain/promise-not-await */
+import test from 'ava'
+import WsRpc from '../src'
 import { Subject } from 'rxjs'
 
-it('should handle result', done => {
+test('should handle result', async (t) => {
   const subject = new Subject<{ id: number, response?: string, error?: string }>()
   const wsRpc = new WsRpc(subject, message => message.id, message => message.error)
   wsRpc.send(requestId => {
-    expect(requestId).toEqual(1)
+    t.is(requestId, 1)
   }).then(response => {
-    expect(response.response).toEqual('aaa')
-    done()
+    t.is(response.response, 'aaa')
   }, error => {
     if (error) {
       throw new Error('should not be error.')
@@ -20,16 +21,15 @@ it('should handle result', done => {
   subject.next({ id: 3, response: 'ccc' })
 })
 
-it('should handle error', done => {
+test('should handle error', async (t) => {
   const subject = new Subject<{ id: number, response?: string, error?: string }>()
   const wsRpc = new WsRpc(subject, message => message.id, message => message.error)
   wsRpc.send(requestId => {
-    expect(requestId).toEqual(1)
-  }).then(response => {
+    t.is(requestId, 1)
+  }).then(() => {
     throw new Error('should be error')
   }, error => {
-    expect(error).toEqual(new Error('aaa'))
-    done()
+    t.is(error.message, 'aaa')
   })
 
   subject.next({ id: 2, error: 'bbb' })
@@ -37,15 +37,14 @@ it('should handle error', done => {
   subject.next({ id: 3, error: 'ccc' })
 })
 
-it('should handle timeout', done => {
+test('should handle timeout', (t) => {
   const subject = new Subject<{ id: number, response?: string, error?: string }>()
   const wsRpc = new WsRpc(subject, message => message.id, message => message.error, 1000)
   wsRpc.send(requestId => {
-    expect(requestId).toEqual(1)
-  }).then(response => {
+    t.is(requestId, 1)
+  }).then(() => {
     throw new Error('should be error')
   }, error => {
-    expect(error).toEqual(new Error('timeout'))
-    done()
+    t.is(error.message, 'timeout')
   })
 })

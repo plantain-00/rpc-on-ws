@@ -26,8 +26,7 @@ module.exports = {
     typeCoverageBrowser: 'type-coverage -p src/tsconfig.browser.json --strict'
   },
   test: [
-    'tsc -p spec',
-    'jasmine',
+    'ava',
     'tsc -p demo',
     new Service('node demo/server.js'),
     'node demo/client.js'
