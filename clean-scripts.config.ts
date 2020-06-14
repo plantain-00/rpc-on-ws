@@ -1,9 +1,9 @@
-const { Service } = require('clean-scripts')
+import { Service, sleep } from 'clean-scripts'
 
 const tsFiles = `"src/**/*.ts" "spec/**/*.ts" "demo/**/*.ts"`
 const jsFiles = `"*.config.js"`
 
-module.exports = {
+export default {
   build: [
     `rimraf dist/`,
     {
@@ -27,9 +27,9 @@ module.exports = {
   },
   test: [
     'ava',
-    'tsc -p demo',
-    new Service('node demo/server.js'),
-    'node demo/client.js'
+    new Service('ts-node demo/server.ts'),
+    () => sleep(2000),
+    'ts-node demo/client.ts'
   ],
   fix: `eslint --ext .js,.ts,.tsx ${tsFiles} ${jsFiles} --fix`
 }
