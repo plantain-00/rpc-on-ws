@@ -20,10 +20,9 @@ export default {
   lint: {
     ts: `eslint --ext .js,.ts,.tsx ${tsFiles} ${jsFiles}`,
     export: `no-unused-export ${tsFiles}`,
-    commit: `commitlint --from=HEAD~1`,
     markdown: `markdownlint README.md`,
-    typeCoverage: 'type-coverage -p src/tsconfig.nodejs.json --strict',
-    typeCoverageBrowser: 'type-coverage -p src/tsconfig.browser.json --strict'
+    typeCoverage: 'type-coverage -p src/tsconfig.nodejs.json --strict --ingore-catch',
+    typeCoverageBrowser: 'type-coverage -p src/tsconfig.browser.json --strict --ingore-catch'
   },
   test: [
     'ava',
