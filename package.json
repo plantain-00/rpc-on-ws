@@ -23,7 +23,7 @@
     "url": "https://github.com/plantain-00/rpc-on-ws/issues"
   },
   "typeCoverage": {
-    "atLeast": 98.78
+    "atLeast": 100
   },
   "homepage": "https://github.com/plantain-00/rpc-on-ws#readme",
   "dependencies": {
