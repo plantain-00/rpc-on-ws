@@ -2,7 +2,6 @@
 
 [![Dependency Status](https://david-dm.org/plantain-00/rpc-on-ws.svg)](https://david-dm.org/plantain-00/rpc-on-ws)
 [![devDependency Status](https://david-dm.org/plantain-00/rpc-on-ws/dev-status.svg)](https://david-dm.org/plantain-00/rpc-on-ws#info=devDependencies)
-[![Build Status: Linux](https://travis-ci.org/plantain-00/rpc-on-ws.svg?branch=master)](https://travis-ci.org/plantain-00/rpc-on-ws)
 [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/github/plantain-00/rpc-on-ws?branch=master&svg=true)](https://ci.appveyor.com/project/plantain-00/rpc-on-ws/branch/master)
 ![Github CI](https://github.com/plantain-00/rpc-on-ws/workflows/Github%20CI/badge.svg)
 [![npm version](https://badge.fury.io/js/rpc-on-ws.svg)](https://badge.fury.io/js/rpc-on-ws)
