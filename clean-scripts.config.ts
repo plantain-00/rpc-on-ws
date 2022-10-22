@@ -12,7 +12,7 @@ export default {
       ],
       front: [
         `tsc -p src/tsconfig.browser.json`,
-        `rollup --config rollup.config.js`
+        `rollup --config rollup.config.mjs`
       ]
     }
   ],
